@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import "colors";
+@import "mixins";
+@import "font-awesome";
+@import "font-awesome-sprockets";
+
+body {
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  // width: 100%;
+  outline: 0;
+  margin: 0px;
+  font-family: "canada-type-gibson",sans-serif;
+}
+
+a {
+  color: rgba(#000, 0.7);
+  &:focus,
+  &:hover {
+    color: rgba(#000, 0.6);
+  }
+}
+
+h1{}
+h2{
+  font-family: "ratio",sans-serif;
+  color: $white;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+h3{
+  color: $white;
+  font-size: 20px;
+  font-weight: 300;
+}
+h4{
+  color: $white;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  font-weight: 300;
+}
+
+section {
+  height: 100vh;
+  padding: 20% 0%;
+  &.about-section{
+    background-color: $pink;
+  }
+  &.skills-section{
+    background-color: $lightBlue;
+  }
+  &.contact-section{
+    background-color: $purple;
+  }
+}
+
+.btn {
+  @include buttonCirc(80px);
+  transition: all 0.5s;
+}
+
+.button-container{
+  margin-top: 15%;
+  .button-regular {
+    &:hover{
+      h4 {
+        color: $pink;
+      }
+      background: $white;
+      border-color: $white;
+    }
+  }
+}
+
+nav.second-nav {
+  display: none;
+}
+
+nav.navigation {
+  // width: 100vw;
+  z-index: 600;
+  position: fixed;
+  background-color: transparent;
+
+  height: 42px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .nav-links-container{
+    z-index: 600;
+    width: 100%;
+    height: 95%;
+    position: fixed;
+    background: transparent;
+    display: block;
+    top: -100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    &.active{
+      transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      top: 58px;
+    }
+    .nav-item {
+      padding: 12px 0px;
+      a {
+        color: black;
+        font-size: 1.5em;
+      }
+      &.active a {
+        color: RGBA(239, 155, 70, 1.00);
+      }
+
+    }
+  }
+  .navigation-links{
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      flex-direction: column;
+  }
+  .nav-title{
+    display: block;
+    position: absolute;
+    z-index: 600;
+    margin-left: 27px;
+    h2{
+      margin-top: 20px;
+    }
+  }
+}
+
+.hamburger-container{
+  background: $white;
+  width: 42px;
+  height: 42px;
+  float: right;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  @include circle(42px);
+  margin: 20px;
+  .hamburger {
+    color: $pink;
+    z-index: 600;
+    font-size: 1.25em;
+    margin-top: 11px;
+  }
+}
