@@ -2,11 +2,7 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 require 'font-awesome-sass'
 
-activate :sprockets
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
 
 configure :development do
   activate :livereload
@@ -26,6 +22,8 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
+activate :autoprefixer 
+activate :sprockets
 # proxy(
 #   '/this-page-has-no-template.html',
 #   '/template-file.html',
