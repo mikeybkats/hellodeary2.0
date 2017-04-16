@@ -3,3 +3,4 @@
 //= require jquery
 
 //= require './mobile-menu.js'
+//= require './projects.js'

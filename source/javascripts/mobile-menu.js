@@ -3,13 +3,16 @@ $(document).ready(function(){
   console.log('lolwat');
   // toggle menu on hamburger open / close
   $('.hamburger').on('click', function(e){
+
     $('.nav-links-container').toggleClass('active');
     if( open === false){
       bindScroll();
+      $('.projects-nav').hide();
       open = true;
     } else {
       unbindScroll();
       open = false;
+      $('.projects-nav').show();
       return;
     }
   });
