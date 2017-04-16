@@ -27,6 +27,10 @@ a {
   }
 }
 
+i {
+  color: $white;
+}
+
 h1{}
 h2{
   font-family: "ratio",sans-serif;
@@ -64,6 +68,12 @@ section {
     background-color: $purple;
   }
 }
+
+.fa-chevron-down{
+  font-size: 2em;
+}
+
+////////////////// home screen ////////////////////
 
 .about-section{
   // height: 100%;
@@ -194,6 +204,7 @@ nav.navigation {
   overflow: visible !important;
   margin: 20px 0px;
   @include circle(42px);
+  @include dropShadow;
   .hamburger {
     color: $pink;
     z-index: 600;
@@ -202,6 +213,59 @@ nav.navigation {
   }
 }
 
+////////////////////// projects page //////////////////////////
+main.projects{
+  background: $bitter;
+}
+.projects-nav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  margin-right: 31px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  ul.projects-nav-list{
+    list-style: none;
+    li{
+      margin: 10px 0px;
+    }
+  }
+  .indicator {
+    height: 16px;
+    width: 16px;
+    display: block;
+    margin: 4px 0px;
+    @include circle(32px);
+    border: 2px solid rgba(250, 249, 249, 1);
+    &.active {
+      background-color: $white;
+    }
+  }
+}
+
+.project-section {
+  padding-top: 37vh;
+  @media (orientation:landscape) {
+    padding-top: 43vh;
+  }
+}
+.chevron {
+  max-height: 32px;
+  position: absolute;
+  top: 47%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+////////////////////// media queries //////////////////////////
 @media screen and (min-width: 800px){
   section {
     padding:0px;
