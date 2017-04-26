@@ -5,8 +5,8 @@ $(document).ready(function(){
     event.preventDefault();
     $(document).off('scroll');
     selectActiveSection(getActiveSectionIndex());
-    
-    setTimeout(activateSelectorOnScroll, 1000);
+
+    setTimeout(activateSelectorOnScroll, 1200);
   });
 
 });
