@@ -6,6 +6,7 @@
 
 html{
   width: 100%;
+  height: 100%;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   text-align: center;
   overflow-x: hidden;
   width: 100%;
+  height: 100%;
   outline: 0;
   margin: 0px;
   font-family: "canada-type-gibson",sans-serif;
@@ -35,7 +37,7 @@ h1{}
 h2{
   font-family: "ratio",sans-serif;
   color: $white;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
   margin-bottom: 0px;
 }
@@ -58,6 +60,7 @@ section {
   height: 100vh;
   padding: 20% 0%;
   margin: 0px;
+
   &.about-section{
     background-color: $pink;
   }
@@ -69,10 +72,30 @@ section {
   }
 }
 
+.content-section-title {
+  padding-top: 37vh;
+  margin: 0px;
+  @media (orientation:landscape) {
+    padding-top: 43vh;
+  }
+}
+
+.chevron {
+  position: absolute;
+  z-index: 600;
+  max-height: 32px;
+  top: 90vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .fa-chevron-down{
   font-size: 2em;
 }
-
+.fa-chevron-down:hover{
+  cursor: pointer;
+}
 ////////////////// home screen ////////////////////
 
 .about-section{
@@ -110,14 +133,24 @@ section {
       border-color: $white;
     }
   }
-}
-
-nav {
-  // display: block;
+  .button-blue {
+    border-color: $darkBlue;
+    h4 {
+      color: $darkBlue;
+    }
+    &:hover{
+      h4 {
+        color: $darkBlue;
+      }
+      background: lighten($darkBlue, 30%);
+      border-color: $darkBlue;
+    }
+  }
 }
 
 nav.navigation {
   position: fixed;
+  z-index: 600;
   background-color: transparent;
   margin: 0 auto;
   width: 100%;
@@ -212,6 +245,9 @@ nav.navigation {
     margin-top: 11px;
   }
 }
+.hamburger-container:hover{
+  cursor: pointer;
+}
 
 ////////////////////// projects page //////////////////////////
 main.projects{
@@ -219,10 +255,11 @@ main.projects{
 }
 .projects-nav {
   position: fixed;
+  z-index: 600;
   top: 0px;
   right: 0px;
   bottom: 0;
-  left: 0;
+  width: 100px;
   margin-right: 31px;
   margin-top: 70px;
   display: flex;
@@ -247,23 +284,15 @@ main.projects{
   }
 }
 
-.project-section {
-  padding-top: 37vh;
-  @media (orientation:landscape) {
-    padding-top: 43vh;
-  }
-}
-.chevron {
-  max-height: 32px;
-  position: absolute;
-  top: 47%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.project-image{
+  min-width: 72%;
+  min-height: 50%;
 }
 
-
-
+////////////////////// skills section /////////////////////////
+main.skills{
+  background: $purple;
+}
 
 ////////////////////// media queries //////////////////////////
 @media screen and (min-width: 800px){
@@ -304,5 +333,37 @@ main.projects{
 
   .mobile-view {
     display: none;
+  }
+
+  .slide {
+    display: block;
+    position: relative;
+    z-index: 0;
+    margin: 0px;
+  }
+  .project-image{
+    position: absolute;
+    margin: 0px auto;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 72%;
+    min-height: 60%;
+    z-index: 0;
+  }
+  .project-info{
+    background: $white;
+    position: absolute;
+    z-index: 100;
+    padding: 32px 16px;
+    margin-top: 15%;
+    @media screen and (min-width: 1000px){
+      margin-top: 12%;
+    }
+    margin-left: 10%;
+    h1, h2, h3, p {
+      text-align: left;
+      color: $darkBlue;
+    }
   }
 }

@@ -1,4 +1,7 @@
 <!doctype html>
+
+<?php /* Short and sweet */ define('WP_USE_THEMES', false); require('./wp-blog-header.php');?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -24,3 +27,5 @@
     <%= partial "footer" %>
   </body>
 </html>
+
+<?php require('/wordpress/wp-blog-header.php'); get_header(); ?>

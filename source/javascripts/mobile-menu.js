@@ -1,18 +1,20 @@
 $(document).ready(function(){
   var open = false;
-  console.log('lolwat');
+  // console.log('lolwat');
   // toggle menu on hamburger open / close
-  $('.hamburger').on('click', function(e){
+  $('.hamburger-container').on('click', function(e){
 
     $('.nav-links-container').toggleClass('active');
     if( open === false){
       bindScroll();
       $('.projects-nav').hide();
+      $('.chevron').hide();
       open = true;
     } else {
       unbindScroll();
       open = false;
       $('.projects-nav').show();
+      $('.chevron').show();
       return;
     }
   });

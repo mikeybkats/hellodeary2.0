@@ -4,3 +4,4 @@
 
 //= require './mobile-menu.js'
 //= require './projects.js'
+//= require './chevron.js'

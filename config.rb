@@ -22,8 +22,9 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-activate :autoprefixer 
+activate :autoprefixer
 activate :sprockets
+activate :directory_indexes
 # proxy(
 #   '/this-page-has-no-template.html',
 #   '/template-file.html',
