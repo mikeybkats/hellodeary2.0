@@ -52,6 +52,9 @@ h4{
   letter-spacing: 2.5px;
   font-weight: 300;
 }
+p, li {
+  font-size: 18px;
+}
 ul {
   padding: 0px;
   margin: 0px;
@@ -96,6 +99,26 @@ section {
 .fa-chevron-down:hover{
   cursor: pointer;
 }
+
+.linkedin {
+  margin-right: 15px;
+  i {
+    font-size: 35px;
+  }
+}
+
+.fa-circle{
+  font-size: 10px;
+  margin: 0px 10px;
+}
+
+.github {
+  margin-left: 15px;
+  i {
+    font-size: 35px;
+  }
+}
+
 ////////////////// home screen ////////////////////
 
 .about-section{
@@ -140,9 +163,9 @@ section {
     }
     &:hover{
       h4 {
-        color: $darkBlue;
+        color: $white;
       }
-      background: lighten($darkBlue, 30%);
+      background: $darkBlue;
       border-color: $darkBlue;
     }
   }
@@ -290,8 +313,51 @@ main.projects{
 }
 
 ////////////////////// skills section /////////////////////////
-main.skills{
-  background: $purple;
+main.skills-page{
+  .skills-left-section{
+    background-color: $lightBlue;
+    .skills-title h2 {
+      color: $darkBlue;
+    }
+    .skills-title .sub-title {
+      color: $darkBlue;
+    }
+    @media screen and (max-width: 799px){
+      .skills-title{
+        margin-left: 1px;
+      }
+    }
+    .skills-list-row{
+    }
+  }
+  .sub-title{
+    max-width: 350px;
+    color: $white;
+    text-align: left;
+  }
+  .skills-list{
+    color: $white;
+    list-style: none;
+    margin: 0px 36px;
+    li {
+      font-weight: 100;
+      text-align: left;
+    }
+  }
+  .skills-top-right-section{
+    height: 50%;
+    background-color: $pink;
+    @media screen and (max-width: 800px){
+      height: 100vh;
+    }
+  }
+  .skills-bottom-right-section{
+    height: 50%;
+    background-color: $bitter;
+    @media screen and (max-width: 800px){
+      height: 100vh;
+    }
+  }
 }
 
 ////////////////////// media queries //////////////////////////

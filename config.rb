@@ -2,11 +2,15 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 require 'font-awesome-sass'
 
-
+set :index_file, "index.php"
 
 configure :development do
   activate :livereload
 end
+
+# configure :development do
+#   activate :php
+# end
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

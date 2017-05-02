@@ -27,15 +27,34 @@ title: PROJECTS
     </div>
   </section>
 
-  <section class="slide row middle-xs center-xs">
+
+  <?php
+    $posts = get_posts();
+    $post_id = get_the_ID();
+
+  foreach ($posts as $post) : setup_postdata( $post ); ?>
+
+  <section class="slide row middle-xs center-xs" id=" ">
     <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
+
+          <h2>
+            <?php the_title(); ?>
+          </h2>
+
+          <h3 class="sub-title">
+            <?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?>
+          </h3>
+
+          <h3 class="sub-sub-title">
+            <?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?>
+          </h3>
+
+          <p class="project-description">
+            <?php $key="description"; echo get_post_meta($post->ID, $key, true); ?>
+          </p>
       <div class="row center-xs">
         <div class="col-xs-12 button-container">
-          <a href="">
+          <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>">
             <div class="btn button-blue">
               <h4>VIEW</h4>
             </div>
@@ -43,102 +62,16 @@ title: PROJECTS
         </div>
       </div>
     </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
+
+    <?php if ( has_post_thumbnail() ) : ?>
+      <div id="col-xs-10 project-image-id" class="project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' );; ?> ') center center/cover no-repeat"   title="<?php the_title_attribute(); ?>">
+      </div>
+    <?php endif; ?>
+
   </section>
 
-  <section class="slide row middle-xs center-xs">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
-      <div class="row center-xs">
-        <div class="col-xs-12 button-container">
-          <a href="">
-            <div class="btn button-blue">
-              <h4>VIEW</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
-  </section>
-
-  <section class="slide row middle-xs center-xs">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
-      <div class="row center-xs">
-        <div class="col-xs-12 button-container">
-          <a href="">
-            <div class="btn button-blue">
-              <h4>VIEW</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
-  </section>
-
-  <section class="slide row middle-xs center-xs">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
-      <div class="row center-xs">
-        <div class="col-xs-12 button-container">
-          <a href="">
-            <div class="btn button-blue">
-              <h4>VIEW</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
-  </section>
-
-  <section class="slide row middle-xs center-xs">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
-      <div class="row center-xs">
-        <div class="col-xs-12 button-container">
-          <a href="">
-            <div class="btn button-blue">
-              <h4>VIEW</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
-  </section>
-
-  <section class="slide row middle-xs center-xs">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
-      <h2>Project Title</h2>
-      <h3 class="sub-title">Product Type & my role</h3>
-      <h3 class="sub-sub-title">Primary technologies used.</h3>
-      <p class="project-description">Description - Mackerelcrow is an e-commerce site I launched in 2015 sometime. I did the styling and some of the layout. It's based on the shopify platform and was built with a template.</p>
-      <div class="row center-xs">
-        <div class="col-xs-12 button-container">
-          <a href="">
-            <div class="btn button-blue">
-              <h4>VIEW</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="col-xs-10 project-image-id" class="project-image" style="background:url('/images/codefellows_coding.jpg') center center/cover no-repeat"></div>
-  </section>
+  <?php
+  endforeach;
+  ?>
 
 </main>
