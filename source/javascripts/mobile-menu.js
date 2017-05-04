@@ -1,7 +1,8 @@
 $(document).ready(function(){
   var open = false;
-  // console.log('lolwat');
-  // toggle menu on hamburger open / close
+
+  highlightMenuSelection();
+
   $('.hamburger-container').on('click', function(e){
 
     $('.nav-links-container').toggleClass('active');
@@ -49,4 +50,11 @@ function unbindScroll(){
   var scrollPosition = html.data('scroll-position');
   html.css('overflow', html.data('previous-overflow'));
   window.scrollTo(scrollPosition[0], scrollPosition[1]);
+}
+
+function highlightMenuSelection(){
+  $('.nav-item').removeClass('active');
+  var windowLocation = '/' + location.pathname.substring(1);
+  console.log(windowLocation);
+  $('a[href="'+windowLocation+'"]').parent().addClass('active');
 }

@@ -54,6 +54,8 @@ h4{
 }
 p, li {
   font-size: 18px;
+  color: $white;
+  text-align: left;
 }
 ul {
   padding: 0px;
@@ -73,6 +75,19 @@ section {
   &.contact-section{
     background-color: $purple;
   }
+}
+
+.clear {
+  margin: 0px;
+  padding: 0px;
+}
+
+.middle-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 }
 
 .content-section-title {
@@ -224,28 +239,29 @@ nav.navigation {
     align-content: center;
     flex-direction: column;
   }
-  .contact-links{
-    background-color: $bitter;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 35%;
-    justify-content: center;
-    align-content: center;
-    ul {
-      list-style: none;
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+
   .nav-title{
     z-index: 600;
     display: block;
     h2{
       margin-top: 20px;
     }
+  }
+}
+.contact-links{
+  background-color: $bitter;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 35%;
+  justify-content: center;
+  align-content: center;
+  ul {
+    list-style: none;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
   }
 }
 .hamburger-container{
@@ -358,6 +374,23 @@ main.skills-page{
       height: 100vh;
     }
   }
+}
+
+////////////////////// about page /////////////////////////////
+.about{
+  h2 {
+    color: $bitter;
+    text-align: left;
+    font-size: 48px;
+  }
+}
+
+.about-right-section-container{
+  background-color: $bitter;
+}
+
+.about-left-section-container{
+  background-color: $lightBlue;
 }
 
 ////////////////////// media queries //////////////////////////
