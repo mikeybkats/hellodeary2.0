@@ -1,15 +1,21 @@
 $(document).ready(function(){
   var open = false;
-  console.log('lolwat');
-  // toggle menu on hamburger open / close
-  $('.hamburger').on('click', function(e){
+
+  highlightMenuSelection();
+
+  $('.hamburger-container').on('click', function(e){
+    $('.hamburger').toggleClass('active');
     $('.nav-links-container').toggleClass('active');
     if( open === false){
       bindScroll();
+      $('.projects-nav').hide();
+      $('.chevron').hide();
       open = true;
     } else {
       unbindScroll();
       open = false;
+      $('.projects-nav').show();
+      $('.chevron').show();
       return;
     }
   });
@@ -26,6 +32,7 @@ $(document).ready(function(){
 
 function bindScroll(){
   $('html, body').on('touchmove', function(e){e.preventDefault();});
+
   var scrollPosition = [
     self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
     self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
@@ -43,4 +50,11 @@ function unbindScroll(){
   var scrollPosition = html.data('scroll-position');
   html.css('overflow', html.data('previous-overflow'));
   window.scrollTo(scrollPosition[0], scrollPosition[1]);
+}
+
+function highlightMenuSelection(){
+  $('.nav-item').removeClass('active');
+  var windowLocation = '/' + location.pathname.substring(1);
+  console.log(windowLocation);
+  $('a[href="'+windowLocation+'"]').parent().addClass('active');
 }

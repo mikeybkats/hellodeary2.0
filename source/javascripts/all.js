@@ -1,5 +1,7 @@
 // This is where it all goes :)
 
-//= require 'jQuery'
+//= require jquery
 
 //= require './mobile-menu.js'
+//= require './projects.js'
+//= require './chevron.js'
