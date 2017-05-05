@@ -63,8 +63,9 @@ ul {
 }
 section {
   height: 100vh;
+  max-width: 100%;
   padding: 20% 0%;
-  margin: 0px;
+  margin: 0px !important;
 
   &.about-section{
     background-color: $pink;
@@ -91,10 +92,10 @@ section {
 }
 
 .content-section-title {
-  padding-top: 37vh;
+  // padding-top: 37vh;
   margin: 0px;
   @media (orientation:landscape) {
-    padding-top: 43vh;
+    // padding-top: 43vh;
   }
 }
 
@@ -102,8 +103,7 @@ section {
   position: absolute;
   z-index: 600;
   max-height: 32px;
-  top: 90vh;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   right: 0;
 }
@@ -216,6 +216,9 @@ nav.navigation {
         font-size: 1.5em;
         text-decoration: none;
       }
+      &:hover a{
+        color: $bitter;
+      }
       &.active a {
         color: $bitter;
       }
@@ -244,6 +247,7 @@ nav.navigation {
     z-index: 600;
     display: block;
     h2{
+      text-shadow: 0px 2px 1px rgba(0, 0, 0, .35);
       margin-top: 20px;
     }
   }
@@ -262,6 +266,9 @@ nav.navigation {
     align-content: center;
     align-items: center;
     justify-content: center;
+  }
+  a:hover{
+    color: $bitter;
   }
 }
 .hamburger-container{
@@ -282,6 +289,10 @@ nav.navigation {
     z-index: 600;
     font-size: 1.25em;
     margin-top: 11px;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
 }
 .hamburger-container:hover{
@@ -289,8 +300,20 @@ nav.navigation {
 }
 
 ////////////////////// projects page //////////////////////////
-main.projects{
+.projects{
   background: $bitter;
+  section {
+    &.content-section-title{
+      h2 {
+        margin: 0px;
+      }
+      height: 90vh;
+    }
+    &.project-row{
+      margin: 0px;
+      height: unset;
+    }
+  }
 }
 .projects-nav {
   position: fixed;
@@ -316,6 +339,7 @@ main.projects{
     display: block;
     margin: 4px 0px;
     @include circle(32px);
+    @include dropShadow;
     border: 2px solid rgba(250, 249, 249, 1);
     &.active {
       background-color: $white;
@@ -324,8 +348,21 @@ main.projects{
 }
 
 .project-image{
-  min-width: 72%;
-  min-height: 50%;
+  // min-width: 100%;
+  min-height: 300px;
+}
+
+.project-info{
+  background: $white;
+  z-index: 100;
+  padding: 20px 0px;
+  width: 100%;
+  // min-height: 450px;
+  padding: 20px 40px 50px 40px;
+  h1, h2, h3, p {
+    text-align: left;
+    color: $darkBlue;
+  }
 }
 
 ////////////////////// skills section /////////////////////////
@@ -394,7 +431,28 @@ main.skills-page{
 }
 
 ////////////////////// media queries //////////////////////////
+@media (max-width: 799px){
+  .project-info{
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+}
+
 @media screen and (min-width: 800px){
+  nav.navigation .nav-links-container.active{
+    flex-direction: row;
+    .navigation-links{
+      width: 50%;
+      height: 100%;
+      flex-direction: column;
+    }
+    .contact-links{
+      width: 50%;
+      height: 100%;
+      flex-direction: column;
+    }
+  }
+
   section {
     padding:0px;
   }
@@ -424,6 +482,7 @@ main.skills-page{
 
   .side-col {
     height: 100%;
+    padding: 0px;
   }
 
   .desktop-view{
@@ -440,6 +499,21 @@ main.skills-page{
     z-index: 0;
     margin: 0px;
   }
+  .projects{
+    background: $bitter;
+    section {
+      &.content-section-title{
+        h2 {
+          margin: 0px;
+        }
+        height: 100vh;
+      }
+      &.project-row{
+        margin: 0px;
+        height: 100vh;
+      }
+    }
+  }
   .project-image{
     position: absolute;
     margin: 0px auto;
@@ -447,6 +521,7 @@ main.skills-page{
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 72%;
+    min-width: 72%;
     min-height: 60%;
     z-index: 0;
   }
@@ -457,8 +532,9 @@ main.skills-page{
     padding: 32px 16px;
     margin-top: 15%;
     @media screen and (min-width: 1000px){
-      margin-top: 12%;
+      margin-top: 9%;
     }
+
     margin-left: 10%;
     h1, h2, h3, p {
       text-align: left;

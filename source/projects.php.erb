@@ -8,13 +8,11 @@ title: PROJECTS
       <li class="nav-list-item"><a href="" class="indicator active"></a></li>
       <li class="nav-list-item"><a href="" class="indicator"></a></li>
       <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
+      
     </ul>
   </div>
 
-  <section class="content-section-title row center-xs">
+  <section class="content-section-title row center-xs middle-xs">
     <div class="col-xs-12">
       <h2>Projects</h2>
         <div class="row center-xs">
@@ -34,24 +32,31 @@ title: PROJECTS
 
   foreach ($posts as $post) : setup_postdata( $post ); ?>
 
-  <section class="slide row middle-xs center-xs" id=" ">
-    <div class="col-xs-12 col-sm-4 col-md-3 project-info">
+  <section class="row slide  middle-xs center-xs project-row" id=" ">
 
-          <h2>
-            <?php the_title(); ?>
-          </h2>
+    <?php if ( has_post_thumbnail() ) : ?>
+      <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' );; ?> ') center center/cover no-repeat"   title="<?php the_title_attribute(); ?>">
+      </div>
+    <?php endif; ?>
 
-          <h3 class="sub-title">
-            <?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?>
-          </h3>
+    <div class="project-info col-xs-10 col-sm-4 col-md-3">
 
-          <h3 class="sub-sub-title">
-            <?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?>
-          </h3>
+      <h2>
+        <?php the_title(); ?>
+      </h2>
 
-          <p class="project-description">
-            <?php $key="description"; echo get_post_meta($post->ID, $key, true); ?>
-          </p>
+      <h3 class="sub-title">
+        <?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?>
+      </h3>
+
+      <h3 class="sub-sub-title">
+        <?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?>
+      </h3>
+
+      <p class="project-description">
+        <?php $key="description"; echo get_post_meta($post->ID, $key, true); ?>
+      </p>
+
       <div class="row center-xs">
         <div class="col-xs-12 button-container">
           <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>">
@@ -61,12 +66,10 @@ title: PROJECTS
           </a>
         </div>
       </div>
+
     </div>
 
-    <?php if ( has_post_thumbnail() ) : ?>
-      <div id="col-xs-10 project-image-id" class="project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' );; ?> ') center center/cover no-repeat"   title="<?php the_title_attribute(); ?>">
-      </div>
-    <?php endif; ?>
+
 
   </section>
 

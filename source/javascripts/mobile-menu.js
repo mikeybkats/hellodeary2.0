@@ -4,7 +4,7 @@ $(document).ready(function(){
   highlightMenuSelection();
 
   $('.hamburger-container').on('click', function(e){
-
+    $('.hamburger').toggleClass('active');
     $('.nav-links-container').toggleClass('active');
     if( open === false){
       bindScroll();
