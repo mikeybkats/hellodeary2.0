@@ -385,6 +385,9 @@ main.skills-page{
   }
   .sub-title{
     max-width: 350px;
+    @media screen and (max-width: 799px){
+      max-width: unset;
+    }
     color: $white;
     text-align: left;
   }
@@ -392,6 +395,10 @@ main.skills-page{
     color: $white;
     list-style: none;
     margin: 0px 36px;
+    @media screen and (max-width: 799px){
+      // margin: 0px 25% 0px 0px;
+      min-width: 50%;
+    }
     li {
       font-weight: 100;
       text-align: left;
