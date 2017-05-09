@@ -43,7 +43,7 @@ h2{
 }
 h3{
   color: $white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
 }
 h4{
@@ -53,7 +53,7 @@ h4{
   font-weight: 300;
 }
 p, li {
-  font-size: 18px;
+  font-size: 14px;
   color: $white;
   text-align: left;
 }
@@ -303,6 +303,7 @@ nav.navigation {
 .projects{
   background: $bitter;
   section {
+    padding: 10% 0px;
     &.content-section-title{
       h2 {
         margin: 0px;
@@ -529,7 +530,7 @@ main.skills-page{
     transform: translate(-50%, -50%);
     max-width: 72%;
     min-width: 72%;
-    min-height: 60%;
+    min-height: 70%;
     z-index: 0;
   }
   .project-info{
@@ -537,9 +538,9 @@ main.skills-page{
     position: absolute;
     z-index: 100;
     padding: 32px 16px;
-    margin-top: 15%;
+    margin-top: 10%;
     @media screen and (min-width: 1000px){
-      margin-top: 9%;
+      margin-top: 7%;
     }
 
     margin-left: 10%;
