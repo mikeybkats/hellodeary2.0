@@ -5,10 +5,12 @@ title: PROJECTS
 
   <div class="projects-nav">
     <ul class="projects-nav-list">
-      <li class="nav-list-item"><a href="" class="indicator active"></a></li>
       <li class="nav-list-item"><a href="" class="indicator"></a></li>
       <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      
+      <li class="nav-list-item"><a href="" class="indicator"></a></li>
+      <li class="nav-list-item"><a href="" class="indicator"></a></li>
+      <li class="nav-list-item"><a href="" class="indicator"></a></li>
+
     </ul>
   </div>
 
@@ -35,7 +37,7 @@ title: PROJECTS
   <section class="row slide  middle-xs center-xs project-row" id=" ">
 
     <?php if ( has_post_thumbnail() ) : ?>
-      <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' );; ?> ') center center/cover no-repeat"   title="<?php the_title_attribute(); ?>">
+      <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>">
       </div>
     <?php endif; ?>
 
@@ -59,7 +61,7 @@ title: PROJECTS
 
       <div class="row center-xs">
         <div class="col-xs-12 button-container">
-          <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>">
+          <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" target="_blank">
             <div class="btn button-blue">
               <h4>VIEW</h4>
             </div>
