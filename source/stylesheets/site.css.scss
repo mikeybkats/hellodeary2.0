@@ -65,8 +65,8 @@ section {
   height: 100vh;
   max-width: 100%;
   padding: 20% 0%;
-  margin: 0px !important;
-
+  margin-left: 0px !important;
+  margin-right: 0px !important;
   &.about-section{
     background-color: $pink;
   }
@@ -103,7 +103,7 @@ section {
   position: absolute;
   z-index: 600;
   max-height: 32px;
-  bottom: 20px;
+  bottom: 60px;
   left: 0;
   right: 0;
 }
@@ -302,17 +302,28 @@ nav.navigation {
 ////////////////////// projects page //////////////////////////
 .projects{
   background: $bitter;
+
   section {
-    padding: 10% 0px;
+    padding: 0px 0px;
+    @media screen and (min-width: 800px){
+      padding: 8% 0px;
+    }
     &.content-section-title{
+      .col-xs-12:first-child{
+        padding-bottom: 70px;
+      }
       h2 {
         margin: 0px;
       }
-      height: 90vh;
+      height: 100vh;
     }
     &.project-row{
       margin: 0px;
+      margin-bottom: 50px;
       height: unset;
+    }
+    &.project-row:last-child{
+      margin-bottom: 0px;
     }
   }
 }
@@ -510,11 +521,12 @@ main.skills-page{
   .projects{
     background: $bitter;
     section {
-      &.content-section-title{
-        h2 {
-          margin: 0px;
-        }
-        height: 100vh;
+      height: 100vh !important;
+    }
+    &.content-section-title{
+      height: 100vh;
+      h2 {
+        margin: 0px;
       }
       &.project-row{
         margin: 0px;
@@ -522,6 +534,7 @@ main.skills-page{
       }
     }
   }
+
   .project-image{
     position: absolute;
     margin: 0px auto;
@@ -538,9 +551,9 @@ main.skills-page{
     position: absolute;
     z-index: 100;
     padding: 32px 16px;
-    margin-top: 10%;
+    margin-top: 5%;
     @media screen and (min-width: 1000px){
-      margin-top: 7%;
+      margin-top: 0%;
     }
 
     margin-left: 10%;
